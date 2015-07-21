@@ -1,0 +1,15 @@
+{
+  "name": "javascript-promises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01_monk.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "monk": "^1.0.1"
+  }
+}

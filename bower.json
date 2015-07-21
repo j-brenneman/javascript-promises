@@ -1,0 +1,18 @@
+{
+  "name": "javascript-promises",
+  "version": "0.0.0",
+  "authors": [
+    "Jeff Dean <jeff@galvanize.it>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
