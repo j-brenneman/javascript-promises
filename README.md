@@ -6,6 +6,8 @@ By the end of this lesson you should be able to:
 
 - Use `arguments` to inspect the arguments that are passed to `then`
 - Refactor async code (that supports promises) to use promises instead of callbacks using `then`
+- Describe how `then` is _chainable_ and how data moves from one `then` to the next, especially when `then` returns a promise
+- Write chained `then` promises
 - Use `Promise.all` to wait for an array of promises to resolve
 
 ## Set the stage
@@ -16,6 +18,7 @@ _Why_?:  Callbacks can become difficult to work with when you are making several
 
 **#1 - Read up a _little_**
 
+* Read https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise - especially the diagram near the top
 * Read over http://www.html5rocks.com/en/tutorials/es6/promises/
   - Pay attention to anything related to `then`
 * Watch https://www.youtube.com/watch?v=wc72cyYt8-c
@@ -283,3 +286,10 @@ Click each link, look at the output on the page and look at the console output. 
 1. Remove the duplication from "Get First" and "Get Last" by writing your own function that _returns_ a promise that has access to all the data needed.
 
 THIS IS NOT SIMPLE!  If you are new to Promises, those three challenges will ramp up steeply in difficulty.  Make a new branch, spend some time on it, try to figure it out.  Come to instructors if the instructions aren't clear, and then if you still can't get it, we'll do a workshop on it :)
+
+**Promise.all**
+
+Another common scenario is that you have multiple things happening concurrently.  This is a great use for Promise.all
+
+* Read https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+* Refactor `04_promise_all.js` to use Promise.all
