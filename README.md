@@ -293,3 +293,24 @@ Another common scenario is that you have multiple things happening concurrently.
 
 * Read https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 * Refactor `04_promise_all.js` to use Promise.all
+
+**Optional: Write your own**
+
+Ready for more?  You can write your own promises (instead of just _using_ promises returned by other frameworks).
+
+See https://www.promisejs.org/ for more details.  Then refactor all of the functions in HTML to use `XMLHttpRequest` instead of `$.getJSON`, by writing your own promise wrapper around `XMLHttpRequest`
+
+Have fun!
+
+## Reflect
+
+Go back to the objectives.  How would you rate yourself on each?  If it's less than a 3-out-of-4, let's talk!
+
+## Reflect: New Questions
+
+What new questions do you have?  Write down _at least_ 4 (c'mon, I _know_ you have them):
+
+1. _____
+1. _____
+1. _____
+1. _____
