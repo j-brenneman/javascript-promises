@@ -5,6 +5,83 @@
     <title>Promises</title>
   </head>
   <body>
+    <p>
+      <a href data-behavior="get-all">Get All Users</a> |
+      <a href data-behavior="get-first">Get First User</a> |
+      <a href data-behavior="get-last">Get Last User</a>
+    </p>
 
+    <h1>All Users</h1>
+    <div data-container="all-users"></div>
+
+    <h1>First User Data</h1>
+    <div data-container="first"></div>
+
+    <h1>Last User Data</h1>
+    <ul data-container="last"></ul>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+      document.querySelector('[data-behavior=get-all]').addEventListener('click', function (e) {
+        e.preventDefault()
+        $.getJSON('/data/users.json', function (users) {
+          document.querySelector('[data-container=all-users]').innerText = users.map(function (user) {
+            return user.name
+          }).join(", ")
+        })
+      })
+
+      document.querySelector('[data-behavior=get-first]').addEventListener('click', function (e) {
+        e.preventDefault()
+        $.getJSON('/data/users.json', function (users) {
+          var theUser = users[0]
+          console.log('The first user is: ', theUser);
+          $.getJSON('/data/users/' + theUser.username + '.json', function (user) {
+            console.log('The full user data is: ', user);
+            $.getJSON(user.bookmarks_path, function (bookmarks) {
+              console.log("The user's username is: ", theUser.username);
+              console.log("The user's email is: ", user.email);
+              console.log("The user's bookmarks are: ", bookmarks);
+              document.querySelector('[data-container=first]').innerText = [
+                "The user with the username",
+                theUser.username,
+                "and the email",
+                user.email,
+                "has bookmarked",
+                bookmarks.join(", ")
+              ].join(" ")
+            })
+          })
+        })
+      })
+
+      document.querySelector('[data-behavior=get-last]').addEventListener('click', function (e) {
+        e.preventDefault()
+        $.getJSON('/data/users.json', function (users) {
+          var theUser = users[users.length - 1]
+          console.log('The user is: ', theUser);
+          $.getJSON('/data/users/' + theUser.username + '.json', function (user) {
+            console.log('The full user data is: ', user);
+            $.getJSON(user.bookmarks_path, function (bookmarks) {
+              console.log("The user's username is: ", theUser.username);
+              console.log("The user's email is: ", user.email);
+              console.log("The user's bookmarks are: ", bookmarks);
+              var ul = document.querySelector('[data-container=last]')
+              var li1 = document.createElement('li')
+              li1.innerText = 'Username: ' + theUser.username
+              ul.appendChild(li1)
+
+              var li2 = document.createElement('li')
+              li2.innerText = 'Email: ' + user.email
+              ul.appendChild(li2)
+
+              var li3 = document.createElement('li')
+              li3.innerText = 'Bookmarks: ' + bookmarks.join(", ")
+              ul.appendChild(li3)
+            })
+          })
+        })
+      })
+    </script>
   </body>
 </html>

@@ -244,7 +244,7 @@ users.remove({}).then(function () {
 
 What's going on there?  You could say:
 
-"Remove all users.  _When_ that operation is complete, insert Joe.  When joe is inserted, insert Sue"
+"Remove all users.  _When_ the records are removed, _then_ insert Joe.  _When_ joe is done being inserted, _then_ insert Sue etc..."
 
 Using similar language, how would you describe the following code?
 
@@ -266,3 +266,20 @@ messages.remove({}).then(function () {
 Take a look at your answer above.  Does it account for the fact that the third callback gets `joe` passed to it?  How did that happen?
 
 If you had to describe chained `thens` to another beginning developer, how would you do it based on the code above?
+
+**Refactoring AJAX Calls**
+
+One very common usage of Promises is to refactor AJAX calls.  Let's get started!
+
+Setup
+
+1. Start your server with `http-server -c-1 -o`
+1. Open the console.
+
+Click each link, look at the output on the page and look at the console output.  The goal of a refactor is that it _doens't change_ the way the app works - it's just a pure code reorganization.  You have 3 challenges here:
+
+1. Refactor all `$.getJSON` functions to take advantage of the fact that `$.getJSON` returns a promise
+1. Refactor the "Get First" and "Get Last" functions to use _chained_ promises
+1. Remove the duplication from "Get First" and "Get Last" by writing your own function that _returns_ a promise that has access to all the data needed.
+
+THIS IS NOT SIMPLE!  If you are new to Promises, those three challenges will ramp up steeply in difficulty.  Make a new branch, spend some time on it, try to figure it out.  Come to instructors if the instructions aren't clear, and then if you still can't get it, we'll do a workshop on it :)
