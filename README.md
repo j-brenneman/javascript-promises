@@ -14,6 +14,10 @@ By the end of this lesson you should be able to:
 
 _Why_?:  Callbacks can become difficult to work with when you are making several asynchronous calls.  Promises are a common and _awesome_ way to help make asynchronous code easier to work with.
 
+Promises can be challenging to reason about at first.  Keep a sunny disposition and calmly and methodically work your way through.  Pause to come up with your own examples, refactor existing code to promises, find an watch new videos etc...  Just sort of _live_ in and around promises for a little while.  If this takes you a week - no worries!
+
+Promises are becoming as fundamental as Strings or other data types in JavaScript.  They appear in almost every JavaScript framework and will play an increasingly important role in JavaScript in the future.
+
 ## Activities
 
 **#1 - Read up a _little_**
@@ -314,3 +318,7 @@ What new questions do you have?  Write down _at least_ 4 (c'mon, I _know_ you ha
 1. _____
 1. _____
 1. _____
+
+## Look into the future
+
+https://www.youtube.com/watch?v=DqMFX91ToLw
